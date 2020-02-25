@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class TableComponent implements OnInit {
 
-  characters: Observable<any[]>;
+  characters: Observable<Object>;
   columns: string[];
     
   constructor(private atService: AdventureTimeService) { }
