@@ -9,14 +9,22 @@ import { Observable } from 'rxjs';
 })
 export class TableComponent implements OnInit {
 
-  characters: Observable<Object>;
+  lines: Observable<Object>;
   columns: string[];
-    
+  dataRefresher: any;
+
   constructor(private atService: AdventureTimeService) { }
 
   ngOnInit(): void {
     this.columns = this.atService.getColumns();
-    this.characters = this.atService.getCharacters();
+    this.refreshData();
   }
 
+  refreshData(){
+  
+    this.dataRefresher = 
+      setInterval(() => {
+        this.lines = this.atService.getLines()
+      }, 5000);  
+  }
 }
