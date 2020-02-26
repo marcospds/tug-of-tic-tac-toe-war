@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Backend (Quarkus)
 
-Run `mvn install quarkus:dev` for a dev backend server. [tug-of-tic-tac-toe-war-backend](https://github.com/marcospds/tug-of-tic-tac-toe-war-backend)
+Run `mvn install quarkus:dev` for a dev backend server. Get the backend at [tug-of-tic-tac-toe-war-backend](https://github.com/marcospds/tug-of-tic-tac-toe-war-backend).
 
 ## Code scaffolding
 
