@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tug-of-tic-tac-toe-war';
-  lines:String[] = ["1", "2"];
 }

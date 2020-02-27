@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class TableComponent implements OnInit {
 
-  lines: Observable<Object>;
+  lines: Observable<any>;
   columns: string[];
   dataRefresher: any;
 
@@ -20,11 +20,11 @@ export class TableComponent implements OnInit {
     this.refreshData();
   }
 
-  refreshData(){
-  
-    this.dataRefresher = 
+  refreshData() {
+
+    this.dataRefresher =
       setInterval(() => {
-        this.lines = this.atService.getLines()
-      }, 5000);  
+        this.lines = this.atService.getLines();
+      }, 5000);
   }
 }
