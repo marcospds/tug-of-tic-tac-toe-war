@@ -7,11 +7,11 @@ export class AdventureTimeService {
 
   constructor(private http: HttpClient) { }
 
-  getLines(): Observable<Object> {
-    return this.http.get("http://localhost:8080/lines");
+  getLines(): Observable<any> {
+    return this.http.get('http://localhost:8080/lines');
   }
 
   getColumns(): string[] {
-    return ["left", "center", "rigth"]
-  };
+    return ['left', 'center', 'rigth'];
+  }
 }
