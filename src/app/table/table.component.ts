@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdventureTimeService } from '../adventure-time.service';
 import { Observable } from 'rxjs';
+import { map, take } from "rxjs/operators";
 
 @Component({
   selector: 'app-table',
@@ -9,10 +10,13 @@ import { Observable } from 'rxjs';
 })
 export class TableComponent implements OnInit {
 
-  lines: Observable<any>;
+  table: Observable<any>;
+  lines: string[][] = [[null, null, null], [null, null, null], [null, null, null]];
   columns: string[];
   dataRefresher: any;
-
+  xWins: number = 0;
+  oWins: number = 0;
+  
   constructor(private atService: AdventureTimeService) { }
 
   ngOnInit(): void {
@@ -24,7 +28,22 @@ export class TableComponent implements OnInit {
 
     this.dataRefresher =
       setInterval(() => {
-        this.lines = this.atService.getLines();
-      }, 5000);
+
+        this.table = this.atService.getLines();
+
+        this.table.pipe(take(1)).subscribe(value => {
+
+          console.log(value); 
+
+          this.lines = value.lines;
+          this.xWins = value.XVictorys;
+          this.oWins = value.OVictory;
+
+          //this.win = this.win ? false : true;
+          //this.winner = value[0][0];
+
+        });
+
+      }, 500);
   }
 }

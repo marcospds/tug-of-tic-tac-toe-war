@@ -8,7 +8,7 @@ export class AdventureTimeService {
   constructor(private http: HttpClient) { }
 
   getLines(): Observable<any> {
-    return this.http.get('http://localhost:8080/lines');
+    return this.http.get('http://localhost:8080/tugoftictactoewar/table');
   }
 
   getColumns(): string[] {

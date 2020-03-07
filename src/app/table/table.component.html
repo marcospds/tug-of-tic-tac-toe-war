@@ -1,23 +1,90 @@
 <style>
+    h2 {
+        font-family: arial, sans-serif;
+    }
+
     table {
         border-collapse: collapse;
         font-family: arial, sans-serif;
         font-size: 50px;
     }
 
-    td {
-        border: 1px solid black;
+    td,
+    th {
         text-align: center;
         height: 100px;
         width: 100px;
     }
+
+    td {
+        border: 2px solid black;
+    }
+
+    th {
+        border: 1px solid lightgray;
+    }
 </style>
 
+<div align="center">
+    <h1>X {{xWins}} vs {{oWins}} O</h1>
 
-<table>
-    <tr *ngFor="let line of lines | async">
-        <td *ngFor="let col of columns">
-            {{line[col]}}
-        </td>
-    </tr>
-</table>
+    <table>
+        <tr>
+            <td>
+                {{lines[0][0]}}
+            </td>
+            <td>
+                {{lines[0][1]}}
+            </td>
+            <td>
+                {{lines[0][2]}}
+            </td>
+            <th>
+                1
+            </th>
+        </tr>
+        <tr>
+            <td>
+                {{lines[1][0]}}
+            </td>
+            <td>
+                {{lines[1][1]}}
+            </td>
+            <td>
+                {{lines[1][2]}}
+            </td>
+            <th>
+                2
+            </th>
+        </tr>
+        <tr>
+            <td>
+                {{lines[2][0]}}
+            </td>
+            <td>
+                {{lines[2][1]}}
+            </td>
+            <td>
+                {{lines[2][2]}}
+            </td>
+            <th>
+                3
+            </th>
+        </tr>
+        <tr>
+            <th>
+                a
+            </th>
+            <th>
+                b
+            </th>
+            <th>
+                c
+            </th>
+        </tr>
+    </table>
+
+    <h2>Jogadas no formato: [time] [linha] [coluna]</h2>
+    <h2>Exemplo de mensagem no chat: x 1 a</h2>
+
+</div>
